@@ -1,0 +1,133 @@
+body {
+  background-image: url("https://images.homedepot-static.com/productImages/12ca7383-3cb5-4750-825d-ff4127c20cc9/svn/java-scraped-oak-pergo-laminate-wood-flooring-lf000844-64_1000.jpg");
+    
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-size: 50px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 1000;
+	line-height: 26px;
+}
+
+.buttonTable {
+  padding: 1em;
+  border: 8px solid #e5d769;
+  border-radius: 75px;
+  box-shadow: 10px 10px 5px #2d2a2a;
+  background-color: #ffe0eb;
+}
+
+td {
+  padding: .6em;
+  text-align: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  background-color: #5fccd8;
+  border: none;
+  box-shadow: 0 9px #999;
+  width: 115px;
+  height: 110px;
+  border-radius: 75%;
+}
+
+.button:focus {
+    outline: none;
+}
+
+#bb1 {
+    background-color: #5fccd8;
+}
+
+#bb2 {
+    background-color: #5fccd8;
+}
+
+#bb3 {
+    background-color: #5fccd8;
+}
+
+#bb4 {
+    background-color: #5fccd8;
+}
+
+#bb5 {
+    background-color: #5fccd8;
+}
+
+#bb6 {
+    background-color: #5fccd8;
+}
+
+#bb7 {
+    background-color: #5fccd8;
+}
+
+#bb8 {
+    background-color: #5fccd8;
+}
+
+#pb1 {
+    background-color: #a139db;
+}
+
+#pb2 {
+    background-color: #a139db;
+}
+
+#pb3 {
+    background-color: #a139db;
+}
+
+#pb4 {
+    background-color: #a139db;
+}
+
+.button:active {
+  background-color: #ffe391;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.synthesizer {
+    position: fixed;
+    top: 47%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#text {
+  color: black;
+  font-size: 14px;
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.purple {
+  background-color: #a139db;
+}
+
+.pink {
+  background-color: #ff82b1;
+}

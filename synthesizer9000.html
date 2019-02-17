@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Jingler Maker</title>
+ <link rel="stylesheet" href="/static/synthesizer9000.css" type="text/css">
+<!--<script type="text/javascript" src="synthesizer.js" </script>-->
+      <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAmpqaAHx8fACMjIwA4eHhAKenpwDHx8cATU1NALKysgDw8PAA6enpAGhoaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQACCgAAAAAAAAAAAAAACgAAAAEAAAkECQAAAAAAAAAGAAcAAAMAAAAKAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAoIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOH/AADBjwAA4QcAAP0HAAD9hwAA/fcAAP33AAD99wAA/fcAAPz3AAD8BwAA/AcAAP/HAAD//wAA//8AAP//AAA=" rel="icon" type="image/x-icon" />
+      <script src="static/js/jquery-1.9.0.js"> </script>
+      <script src="static/js/script.js"></script>
+    </head>
+  <h1>Jingle Maker</h1>
+<div class="synthesizer">
+  <body>
+<form action = "http://localhost:5000/" method = "GET">
+<table class="bigTable">
+  <tr>
+  <td colspan="4">
+  </td>
+  <td>
+    <table class="buttonTable">
+      <tr>
+        <td>
+          <button class="button" name="bb1" value="a" id="bb1" onclick="changeColorBlue('bb')">A
+          </button>
+        </td>
+        <td>
+          <button class="button" name="bb2" value="b" id="bb2" onclick="changeColorBlue('bb2')">B
+          </button>
+        </td>
+        <td>
+          <button class="button" name="bb3" value="c" id="bb3" onclick="changeColorBlue('bb3')">C
+        </button>
+        </td>
+        <td>
+          <button class="button" name="bb4" value="d" id="bb4" onclick="changeColorBlue('bb4')">D
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="button" name="bb5" value="e" id="bb5" onclick="changeColorBlue('bb5')">E
+          </button>
+        </td>
+        <td>
+          <button class="button" name="bb6" value="f" id="bb6" onclick="changeColorBlue('bb6')">F
+          </button>
+        </td>
+        <td>
+          <button class="button" name="bb7" value="g" id="bb7" onclick="changeColorBlue('bb7')">G
+          </button>
+        </td>
+        <td>
+          <button class="button" name="bb8" value="random" id="bb8" onclick="changeColorBlue('bb8')">random key
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="button purple" name="pb1" value="ionian" id="pb1" onclick="changeColorPurple('pb1')">ionian lydian
+          </button>
+        </td>
+        <td>
+          <button class="button purple" name="pb2" value="dorian" id="pb2" onclick="changeColorPurple('pb2')">dorian phrygian aeolian
+          </button>
+        </td>
+        <td>
+          <button class="button purple" name="pb3" value="mixolydian" id="pb3" onclick="changeColorPurple('pb3')">mixolydian
+          </button>
+        </td>
+        <td>
+          <button class="button purple" name="pb4" value="locrian" id="pb4" onclick="changeColorPurple('pb4')">locrian
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+        </td>
+        <td>
+          <button class="button pink" name="play" value="play" action="/play">PLAY
+          </button>
+        </td>
+        <td>
+          <button class="button pink">ALL RANDOM
+          </button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+  </div>
+<script>
+function changeColorBlue(btn) {
+    document.getElementById("bb1").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb2").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb3").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb4").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb5").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb6").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb7").style.backgroundColor = "#5fccd8";
+    document.getElementById("bb8").style.backgroundColor = "#5fccd8";
+    document.getElementById(btn).style.backgroundColor = "#ffe391";
+}
+
+var countPurple = 0;
+function changeColorPurple(btn) {
+    document.getElementById("pb1").style.backgroundColor = "#a139db";
+    document.getElementById("pb2").style.backgroundColor = "#a139db";
+    document.getElementById("pb3").style.backgroundColor = "#a139db";
+    document.getElementById("pb4").style.backgroundColor = "#a139db";
+    document.getElementById(btn).style.backgroundColor = "#ffe391";
+}
+    </script>
+    </body>
+  </form>
+</html>
