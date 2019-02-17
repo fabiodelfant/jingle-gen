@@ -1,9 +1,10 @@
-import numpy as np
 import random
+import sys
+
+import numpy as np
 import simpleaudio as sa
 
 # calculate note frequencies
-from numpy.core._multiarray_umath import ndarray
 
 A_freq = 440
 Ash_freq = A_freq * 2 ** (1 / 12)
@@ -96,29 +97,30 @@ def get_locrian(input_key):
 
 
 # concatenate notes
-def make(key, mode):
+def play(key, mode):
     x = {"ionian": get_ionian_l(key),
          "dorian": get_dorian_pa(key),
          "mixolydian": get_mixolydian(key),
          "locrian": get_locrian(key)}
     c = x[mode]
     a = np.array((c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)],
-                  c[random.randint(0, len(c))]))
+                  c[random.randint(0, len(c) - 1)]))
     b = np.array((c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)],
-                  c[random.randint(0, len(c))]))
+                  c[random.randint(0, len(c) - 1)]))
     d = np.array((c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)], c[random.randint(0, len(c) - 1)],
-                  c[random.randint(0, len(c))]))
-    return np.vstack((a, b, a, d))
+                  c[random.randint(0, len(c) - 1)]))
+
+    audio = np.vstack((a, b, a, d))
+    # normalize to 16-bit range
+    audio *= 32767 / np.max(np.abs(audio))
+    # convert to 16-bit data
+    audio = audio.astype(np.int16)
+    wave_obj = sa.WaveObject(audio, 1, 2, sample_rate)
+    # start playback
+    play_obj = wave_obj.play()
+    # wait for playback to finish before exiting
+    play_obj.wait_done()
 
 
-audio = make("c", "mixolydian")
-
-# normalize to 16-bit range
-audio *= 32767 / np.max(np.abs(audio))
-# convert to 16-bit data
-audio = audio.astype(np.int16)
-wave_obj = sa.WaveObject(audio, 1, 2, sample_rate)
-# start playback
-play_obj = wave_obj.play()
-# wait for playback to finish before exiting
-play_obj.wait_done()
+if __name__ == '__main__':
+    play(sys.argv[1], sys.argv[2])
